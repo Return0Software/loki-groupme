@@ -1,0 +1,22 @@
+{
+  "name": "loki-gm",
+  "version": "0.0.1",
+  "description": "Basic groupme bot for serverless functions deployment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephMart/loki-gm.git"
+  },
+  "author": "Joseph Martinsen",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JosephMart/loki-gm/issues"
+  },
+  "homepage": "https://github.com/JosephMart/loki-gm#readme",
+  "dependencies": {
+    "@now/node": "^1.5.0"
+  }
+}
