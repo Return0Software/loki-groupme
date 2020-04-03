@@ -1,5 +1,5 @@
 {
   "env": {
-    "VARIABLE_NAME": "@bot_id"
+    "BOT_ID": "@bot_id"
   }
 }
