@@ -32,8 +32,8 @@ const sendMessage = async (text: string) => {
 
 export default (req: NowRequest, res: NowResponse) => {
   const groupMeReq = req.body;
-  console.log(`GroupMeReq: ${groupMeReq}`);
-  console.log(`ENV variables ${process.env}`);
+  console.log(`GroupMeReq: ${JSON.stringify(groupMeReq)}`);
+  console.log(`ENV variables ${JSON.stringify(process.env)}`);
 
   switch (groupMeReq.text.toLowerCase()) {
     case "hey loki":
@@ -44,4 +44,5 @@ export default (req: NowRequest, res: NowResponse) => {
   }
 
   console.log("in the final block");
+  res.json({ response: "done" });
 };
