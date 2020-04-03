@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/JosephMart/loki-gm#readme",
   "dependencies": {
-    "@now/node": "^1.5.0"
+    "@now/node": "^1.5.0",
+    "got": "^10.7.0"
   }
 }
