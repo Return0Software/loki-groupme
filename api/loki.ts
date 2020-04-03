@@ -28,7 +28,10 @@ const sendMessage = async (text: string) => {
     text,
     bot_id: process.env.BOT_ID
   };
-  got.post("https://api.groupme.com/v3/bots/post", { json });
+  const response = await got.post("https://api.groupme.com/v3/bots/post", {
+    json
+  });
+  console.log(JSON.stringify(response));
 };
 
 export default (req: NowRequest, res: NowResponse) => {
