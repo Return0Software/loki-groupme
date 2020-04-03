@@ -23,6 +23,7 @@ import got from "got";
 
 const sendMessage = async (text: string) => {
   console.log(`Sending text (${text})`);
+  console.log(`BOT_ID ${process.env.BOT_ID}`);
   const json = {
     text,
     bot_id: process.env.BOT_ID
@@ -36,7 +37,7 @@ export default (req: NowRequest, res: NowResponse) => {
 
   switch (groupMeReq.text.toLowerCase()) {
     case "hey loki":
-      sendMessage(`Hi ${name}`);
+      sendMessage(`Hi ${groupMeReq.name}`);
       break;
     default:
       break;
