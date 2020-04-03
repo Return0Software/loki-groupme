@@ -31,16 +31,17 @@ const sendMessage = async (text: string) => {
   const response = await got.post("https://api.groupme.com/v3/bots/post", {
     json
   });
+  console.log("response done");
   console.log(JSON.stringify(response));
 };
 
-export default (req: NowRequest, res: NowResponse) => {
+export default async (req: NowRequest, res: NowResponse) => {
   const groupMeReq = req.body;
   console.log(`GroupMeReq: ${JSON.stringify(groupMeReq)}`);
 
   switch (groupMeReq.text.toLowerCase()) {
     case "hey loki":
-      sendMessage(`Hi ${groupMeReq.name}`);
+      await sendMessage(`Hi ${groupMeReq.name}`);
       break;
     default:
       break;
