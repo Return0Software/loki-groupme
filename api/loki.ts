@@ -34,6 +34,7 @@ export default (req: NowRequest, res: NowResponse) => {
   const groupMeReq = req.body;
   console.log(`GroupMeReq: ${JSON.stringify(groupMeReq)}`);
   console.log(`ENV variables ${JSON.stringify(process.env)}`);
+  console.log(`bot_id ${JSON.stringify(process.env.bot_id)}`);
 
   switch (groupMeReq.text.toLowerCase()) {
     case "hey loki":
