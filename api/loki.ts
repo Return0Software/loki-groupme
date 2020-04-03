@@ -23,16 +23,14 @@ import got from "got";
 
 const sendMessage = async (text: string) => {
   console.log(`Sending text (${text})`);
-  console.log(`BOT_ID ${process.env.BOT_ID}`);
   const json = {
     text,
     bot_id: process.env.BOT_ID
   };
-  const response = await got.post("https://api.groupme.com/v3/bots/post", {
+  await got.post("https://api.groupme.com/v3/bots/post", {
     json
   });
   console.log("response done");
-  console.log(JSON.stringify(response));
 };
 
 export default async (req: NowRequest, res: NowResponse) => {
