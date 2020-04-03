@@ -22,10 +22,10 @@ import got from "got";
 */
 
 const sendMessage = async (text: string) => {
-  console.log(`Sending text (${text} with bot_id (${process.env.bot_id}))`);
+  console.log(`Sending text (${text} with bot_id (${process.env.BOT_ID}))`);
   const json = {
     text,
-    bot_id: process.env.bot_id
+    bot_id: process.env.BOT_ID
   };
   // got.post("https://api.groupme.com/v3/bots/post", { json });
 };
@@ -34,7 +34,7 @@ export default (req: NowRequest, res: NowResponse) => {
   const groupMeReq = req.body;
   console.log(`GroupMeReq: ${JSON.stringify(groupMeReq)}`);
   console.log(`ENV variables ${JSON.stringify(process.env)}`);
-  console.log(`bot_id ${JSON.stringify(process.env.bot_id)}`);
+  console.log(`bot_id ${JSON.stringify(process.env.BOT_ID)}`);
 
   switch (groupMeReq.text.toLowerCase()) {
     case "hey loki":
