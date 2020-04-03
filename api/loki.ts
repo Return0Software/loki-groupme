@@ -25,14 +25,15 @@ const sendMessage = async (text: string) => {
   console.log(`Sending text (${text} with bot_id (${process.env.bot_id}))`);
   const json = {
     text,
-    bot_id: process.env.bod_id
+    bot_id: process.env.bot_id
   };
   // got.post("https://api.groupme.com/v3/bots/post", { json });
 };
 
 export default (req: NowRequest, res: NowResponse) => {
-  const groupMeReq = JSON.parse(req.body);
+  const groupMeReq = req.body;
   console.log(`GroupMeReq: ${groupMeReq}`);
+  console.log(`ENV variables ${process.env}`);
 
   switch (groupMeReq.text.toLowerCase()) {
     case "hey loki":
